@@ -9,11 +9,15 @@ def hello_world():
     return 'Hello World!'
 
 
-@app.route('/get_posts', methods=['POST'])
+@app.route('/get_posts', methods=['GET', 'POST'])
 def get_posts():
     """Takes in JSON data of posts made to Middle School page & parses it.
     JSON format is a list of dicts, with each dict being 1 post."""
 
+
+    return True
+    
+def parse():
     # Keywords selected from: http://slate.me/KlDTQn
     
     keyword_weights = {
@@ -27,6 +31,7 @@ def get_posts():
 						'pissed':  1,
 						'crap':  1,
 						'sucks':  1,
+						'shit': 1,
 
 						'bullshit':4,
 						'stressed': 4,
@@ -96,7 +101,6 @@ def get_posts():
 	   #     "created_time": "2015-05-19T22:51:20+0000"
 	   #   }, 
 
-    return 
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8080)

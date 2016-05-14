@@ -10,12 +10,12 @@ def hello_world():
 
 @app.route('/get_posts', methods=['GET'])
 def get_posts():
-    '''Takes in JSON data of posts made to Middle School page & parses it.
-    JSON format is a list of dicts, with each dict being 1 post.'''
+    """Takes in JSON data of posts made to Middle School page & parses it.
+    JSON format is a list of dicts, with each dict being 1 post."""
 
 
 
-  	 # {
+  	# {
 	   # "data": [
 	   #   {
 	   #     "id": "546349135390552_1138601292831997", 

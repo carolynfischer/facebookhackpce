@@ -22,7 +22,7 @@ def respond_FB(sender_id, text):
 @app.route('/auth')
 def fb_webhook(methods=['GET', 'POST']):
     print request.args.get('hub.verify_token')
-    if (request.args.get('hub.verify_token') == '***REMOVED***'):
+    if (request.args.get('hub.verify_token') == ''):
         return request.args.get('hub.challenge')
     return 'Error, wrong validation token'
         

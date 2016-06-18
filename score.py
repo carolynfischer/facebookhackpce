@@ -73,8 +73,6 @@ def parse():
 
     # data = json file POSTed from API call
     
-	msg_words = "Hi gun frustrated gun what"
-	#msg_words = data['message'].split(" ")
 	msg_words = msg_words.split(" ")
 	# msg_words : is a list of the words in a single post	
     
@@ -88,25 +86,6 @@ def parse():
 			score += msg_words.count(word) * keyword_weights[word]
 
 	print score
-  	# {
-	   # "data": [
-	   #   {
-	   #     "id": "546349135390552_1138601292831997", 
-	   #     "message": "test", 
-	   #     "from": {
-	   #       "category": "Restaurant/cafe", 
-	   #       "category_list": [
-	   #         {
-	   #           "id": "128673187201735", 
-	   #           "name": "Coffee Shop"
-	   #         }
-	   #       ], 
-	   #       "name": "Mahesh's Cafe", 
-	   #       "id": "546349135390552"
-	   #     }, 
-	   #     "created_time": "2015-05-19T22:51:20+0000"
-	   #   }, 
-
 
 if __name__ == '__main__':
     #app.run(debug=True, host='0.0.0.0', port=8080)

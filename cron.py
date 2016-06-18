@@ -5,9 +5,9 @@ import datetime
 import dateutil.parser
 from twilio.rest import TwilioRestClient
 
-ACCESS_TOKEN = '***REMOVED***'
-account_sid = "***REMOVED***"
-auth_token  = "***REMOVED***"
+ACCESS_TOKEN = ''
+account_sid = ""
+auth_token  = ""
 client = TwilioRestClient(account_sid, auth_token)
 
 def pull_posts():
@@ -34,9 +34,9 @@ def pull_posts():
 def send_message():
     url = 'https://graph.facebook.com/v2.6/me/messages'
     message_to_post = {'text': 'Please look out for your friend!'}
-    payload = {'qs': {'access_token': '***REMOVED***'},
+    payload = {'qs': {'access_token': '[insert token here]'},
                 'json': {
-                    'recipient': {'id': '***REMOVED***'},
+                    'recipient': {'id': '[insert id here]'},
                     'message': message_to_post
                 }
     }
@@ -47,11 +47,9 @@ def send_sms(name, message):
     sms_input = "Please pay attention to and contact {}, they might be in need! \
     They just posted the following comment and it's concerning: {}.".format(name, message)
     message = client.messages.create(body=sms_input,
-        to="***REMOVED***",    # Replace with your phone number
-        from_="***REMOVED***") # Replace with your Twilio number
+        to="",    # Replace with your phone number
+        from_="") # Replace with your Twilio number
     print message
 
 if __name__ == '__main__':
     pull_posts()
-    #send_message()
-    #send_sms()
